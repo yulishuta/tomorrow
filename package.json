@@ -1,0 +1,36 @@
+{
+  "name": "@msfe/testing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "kakaxi build-vanilla-ts",
+    "start": "kakaxi start-vanilla-ts",
+    "test:watch": "kakaxi test --watch",
+    "test": "kakaxi test"
+  },
+  "main": "dist/lib/index.js",
+  "types": "dist/types/index.d.ts",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "dist/lib",
+    "dist/types"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.3.1",
+    "@commitlint/config-conventional": "^7.3.1",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^12.7.4",
+    "eslint-plugin-msfe": "^2.0.1",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.2",
+    "typescript": "^3.5.3"
+  }
+}

@@ -1,0 +1,25 @@
+stages:
+  - test
+  - release
+
+before_script:
+  - yarn
+
+test:
+  image: harbor.htj.pdd.net/pdd-image/frontend/msfe-kakaxi:v1.0.26
+  stage: test
+  tags:
+    - node
+  script:
+    - yarn test
+
+publish:
+  image: harbor.htj.pdd.net/pdd-image/frontend/msfe-kakaxi:v1.0.26
+  stage: release
+  tags:
+    - semantic
+  only:
+    refs:
+      - /^qa\/.+$|^master/
+  script:
+    - kakaxi publish
